@@ -1,27 +1,31 @@
+
 [
     {
-        "title": "asdf",
-        "text": "asdf",
-        "id": "4728"
+        "movie": "Lion King",
+        "review": "zazu is underrated, give that hornbill a sequel"
     },
     {
-        "title": "asdfasdf",
-        "text": "asdfasdf",
-        "id": "3eab"
+        "movie": "Lion King",
+        "review": "Scar is the lion everyone loves to hate"
     },
     {
-        "title": "asdfasdfasdf",
-        "text": "asdfasdfasdf",
-        "id": "81b4"
+        "movie": "Lion King",
+        "review": "Hakuna matata"
     },
     {
-        "title": "asdfasdfasdfasfd",
-        "text": "asdfasdfasdfasdf",
-        "id": "591f"
+        "movie": "The Godfather",
+        "review": "I'm gonna make him an offer you can't refuse, watch this \"movie\""
     },
     {
-        "title": "asdfasdfasdfasdfasdf",
-        "text": "asdfasdfasdfasdfasdf",
-        "id": "890c"
+        "movie": "The wizard of 0z",
+        "review": "The tin man gave a metallic, hollow performance"
+    },
+    {
+        "movie": "The wizard of oz",
+        "review": "Those flying monkeys are nightmare fuel!"
+    },
+    {
+        "movie": "west side Story",
+        "review": "Ten years of ballet and three years of tap to join a gang in this neighborhood"
     }
 ]
