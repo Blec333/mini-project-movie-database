@@ -5,8 +5,8 @@ router.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '../public/index.html'));// this one not required
   });
   
-  router.get('/notes', (req, res) => {
-    res.sendFile(path.join(__dirname, '../public/notes.html'));
+  router.get('/movies', (req, res) => {
+    res.sendFile(path.join(__dirname, '../public/movies.html'));
   });
   
   router.get('*', (req, res) => {

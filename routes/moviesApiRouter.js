@@ -4,16 +4,16 @@ const uuid = require('../helpers/uuid');//generates a unique id
 
 
 
-// GET Route for retrieving all the notes
-router.get('/notes', (req, res) => {
-  console.info(`${req.method} request received for notes`);
+// GET Route for retrieving all the movies
+router.get('/movies', (req, res) => {
+  console.info(`${req.method} request received for movies`);
   readFromFile('./db/db.json').then((data) => res.json(JSON.parse(data)));
 });
 
 
 
 // POST Route for a new UX/UI note
-router.post('/notes', (req, res) => {
+router.post('/movies', (req, res) => {
   console.info(`${req.method} request received to add a note`);
   console.log(req.body);
 
@@ -36,13 +36,13 @@ router.post('/notes', (req, res) => {
 
 
 // DELETE Route for removing selected note
-router.delete("/notes/:id", (req, res) => {
-  console.info(`${req.method} request received for notes`);
+router.delete("/movies/:id", (req, res) => {
+  console.info(`${req.method} request received for movies`);
   const noteId = req.params.id;
   readFromFile('./db/db.json', 'utf8')
   .then((data) => {
-      notesArr = JSON.parse(data);
-      var filteredArray = notesArr.filter(function (note) {
+      moviesArr = JSON.parse(data);
+      var filteredArray = moviesArr.filter(function (note) {
         return note.id != noteId;
       });
       writeToFile("./db/db.json", filteredArray);
