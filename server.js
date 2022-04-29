@@ -1,7 +1,7 @@
 const express = require('express');
 const path = require('path');
 const htmlRouter = require('./routes/htmlRouter.js');
-const apiRouter = require('./routes/notesApiRouter.js');
+const apiRouter = require('./routes/moviesApiRouter.js');
 
 // Using express and defining server port
 const app = express();
@@ -18,5 +18,5 @@ app.use('/', htmlRouter);
 
 
 app.listen(PORT, () => {
-  console.log(`Note Taker app is listening at http://localhost:${PORT}`);
+  console.log(`Movies app is listening at http://localhost:${PORT}`);
 });
