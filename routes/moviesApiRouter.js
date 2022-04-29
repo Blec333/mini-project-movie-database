@@ -1,59 +1,63 @@
 const router = require('express').Router();
-const { readFromFile, writeToFile, readAndAppend } = require('../helpers/fsUtils');// read/write files
-const uuid = require('../helpers/uuid');//generates a unique id
-
 
 
 // GET Route for retrieving all the movies
 router.get('/movies', (req, res) => {
   console.info(`${req.method} request received for movies`);
-  readFromFile('./db/db.json').then((data) => res.json(JSON.parse(data)));
+  // TODO: read movies from sql server db table
+
+
 });
 
 
 
-// POST Route for a new UX/UI note
-router.post('/movies', (req, res) => {
-  console.info(`${req.method} request received to add a note`);
+// POST Route for a new movie
+router.post('/add-movie', (req, res) => {
+  console.info(`${req.method} request received to add a movie`);
   console.log(req.body);
-
-  const { title, text } = req.body;
-
+  const { movie, review } = req.body;
   if (req.body) {
-    const newNote = {
-      title,
-      text,
-      id: uuid(),
+    const newMovie = {
+      movie,
+      review
     };
-
-    readAndAppend(newNote, './db/db.json');
-    res.json(`note added successfully 🚀`);
-  } else {
-    res.error('Error in adding note');
   }
+    // TODO: add information for the body provided by client to sql server db
+
+
+  res.end();
 });
 
 
+// POST Route for a new movie
+router.post('/update-review', (req, res) => {
+  console.info(`${req.method} request received to add a movie`);
+  console.log(req.body);
+  const { review } = req.body;
+  if (req.body) {
+    const newMovie = {
+      review
+    };
+  }
+    // TODO: add information from the body provided by client to sql server db (overwrite review field)
 
-// DELETE Route for removing selected note
+
+  res.end();
+});
+
+// DELETE Route for removing selected movie
 router.delete("/movies/:id", (req, res) => {
   console.info(`${req.method} request received for movies`);
-  const noteId = req.params.id;
-  readFromFile('./db/db.json', 'utf8')
-  .then((data) => {
-      moviesArr = JSON.parse(data);
-      var filteredArray = moviesArr.filter(function (note) {
-        return note.id != noteId;
-      });
-      writeToFile("./db/db.json", filteredArray);
-  res.send(JSON.stringify(filteredArray));
-  })
-  .catch((err) => {
-      console.log('Error', err);
+  const movieId = req.params.id;
+// TOTO: read from sql server
+
+
+  
+// TODO: remove movie from the sql server table (filter out specified movie)
+
+
+  res.end();
   });
-});
-
-
 
 
 module.exports = router;
